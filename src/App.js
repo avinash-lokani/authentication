@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginPage from './Components/LoginPage';
-import {PostList} from './Components/PostForm';
+import {ListRendering} from "./Components/ListRendering"
 function App() {
   const {isAuthenticated, isLoading} = useAuth0();
   if(isLoading){
@@ -14,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
     
-          <Route path='/' element={<PostList/>} />
+          <Route path='/' element={<ListRendering/>} />
         </Routes>
       </BrowserRouter>
     );
